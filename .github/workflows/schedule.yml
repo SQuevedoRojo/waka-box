@@ -11,6 +11,19 @@ jobs:
       - uses: actions/checkout@master
       - name: Update gist
         uses: matchai/waka-box@master
+        
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'  # Especifica la versión de Node.js a usar
+
+      - name: Install dependencies
+        run: |
+          npm install
+          npm install dotenv
+
+      - name: Run Wakatime Update Script
+        run: node index.js 
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           GIST_ID: 0d1f36a35d25e1027453f5ff8aab6c52
