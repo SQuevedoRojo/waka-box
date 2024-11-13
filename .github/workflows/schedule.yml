@@ -11,7 +11,7 @@ jobs:
       - uses: actions/checkout@master
                     
       - name: waka-box
-        uses: matchai/waka-box@v5.0.0
+        uses: SQuevedoRojo/waka-box@master
         
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
